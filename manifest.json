@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "name": "Just Eat Food Hygiene Ratings",
+    "version": "0.1.0",
+    "description": "Shows food standard agency hygiene ratings next to establishments within Just Eat website",
+    "permissions": [
+        "identity",
+        "storage",
+        "http://api.ratings.food.gov.uk/*"
+    ],
+    "content_scripts": [{
+        "css": ["styles.css"],
+        "js": ["content.js"],
+        "matches": ["https://www.just-eat.co.uk/area/*"],
+        "run_at": "document_end"
+    }],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "icons": { 
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png" 
+    }
+}
